@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio · IT Support & Systems Administrator</title>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      background: #f4f7fc;
+      color: #1e2b3a;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* header / nav */
+    header {
+      background: #0b1a2b;
+      color: #fff;
+      padding: 18px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .logo i {
+      color: #5fa8f0;
+      margin-right: 8px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #e8edf3;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: 0.2s;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 4px;
+    }
+
+    .nav-links a:hover {
+      color: #7bb3ff;
+      border-bottom-color: #7bb3ff;
+    }
+
+    /* sections */
+    section {
+      padding: 60px 0;
+      border-bottom: 1px solid #dce5ef;
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    h2 {
+      font-size: 2.1rem;
+      font-weight: 600;
+      margin-bottom: 28px;
+      color: #0b1a2b;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    h2 i {
+      color: #2a6fdb;
+      font-size: 1.9rem;
+    }
+
+    .section-sub {
+      color: #3e5a77;
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+    }
+
+    /* home */
+    #home {
+      padding-top: 40px;
+      padding-bottom: 30px;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .hero-image {
+      flex: 0 0 180px;
+      text-align: center;
+    }
+
+    .hero-image img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #fff;
+      box-shadow: 0 8px 24px rgba(0, 20, 40, 0.15);
+      background: #d9e3f0;
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .hero-text h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      color: #0b1a2b;
+    }
+
+    .hero-text .badge {
+      background: #d0e0ff;
+      color: #004080;
+      padding: 6px 18px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 1rem;
+      display: inline-block;
+      margin: 12px 0 8px;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      color: #2b4057;
+      max-width: 600px;
+    }
+
+    .hero-text .intro-short {
+      margin-top: 12px;
+      font-size: 1.05rem;
+      color: #1f3a53;
+    }
+
+    /* about */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+    .about-card {
+      background: #fff;
+      padding: 24px 28px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      border: 1px solid #e6eef9;
+    }
+    .about-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      color: #0b1a2b;
+    }
+    .about-card p, .about-card li {
+      color: #1f3a53;
+    }
+    .about-card ul {
+      list-style: none;
+      padding-left: 4px;
+    }
+    .about-card ul li {
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .about-card ul li i {
+      color: #2a6fdb;
+      width: 20px;
+    }
+
+    /* skills */
+    .skills-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px 30px;
+      background: #fff;
+      padding: 32px 36px;
+      border-radius: 28px;
+      border: 1px solid #e6eef9;
+    }
+    .skill-item {
+      background: #eef4fc;
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-weight: 500;
+      color: #0f2a44;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+    }
+    .skill-item i {
+      margin-right: 8px;
+      color: #2a6fdb;
+    }
+
+    /* projects */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 28px;
+    }
+    .project-card {
+      background: #fff;
+      padding: 22px 24px;
+      border-radius: 24px;
+      border: 1px solid #e2ecf9;
+      transition: 0.15s;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.02);
+    }
+    .project-card:hover {
+      border-color: #b0ccec;
+      box-shadow: 0 8px 18px rgba(26, 67, 113, 0.08);
+    }
+    .project-card h4 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      color: #0b1a2b;
+    }
+    .project-card p {
+      color: #2e4a69;
+      font-size: 0.95rem;
+    }
+    .project-card i {
+      color: #2a6fdb;
+      margin-right: 6px;
+    }
+
+    /* certs & exp */
+    .cert-list, .exp-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .cert-item, .exp-item {
+      background: #fff;
+      padding: 18px 26px;
+      border-radius: 18px;
+      border-left: 6px solid #2a6fdb;
+      border: 1px solid #e2ecf9;
+      border-left-width: 6px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cert-item strong, .exp-item strong {
+      font-size: 1.1rem;
+      color: #0b1a2b;
+    }
+    .cert-item span, .exp-item span {
+      color: #3a5d7c;
+    }
+    .exp-item .exp-role {
+      font-weight: 600;
+      color: #1d3d60;
+    }
+
+    /* CV button */
+    .cv-section {
+      text-align: center;
+      margin: 10px 0 20px;
+    }
+    .btn-cv {
+      background: #0b1a2b;
+      color: #fff;
+      border: none;
+      padding: 14px 48px;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: 0.2s;
+      box-shadow: 0 6px 14px rgba(11, 26, 43, 0.2);
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .btn-cv i {
+      font-size: 1.3rem;
+    }
+    .btn-cv:hover {
+      background: #1d3d60;
+      transform: scale(1.02);
+      box-shadow: 0 8px 20px rgba(11, 26, 43, 0.3);
+    }
+
+    /* contact */
+    .contact-wrap {
+      background: #fff;
+      padding: 32px 36px;
+      border-radius: 30px;
+      border: 1px solid #e2ecf9;
+    }
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px 40px;
+      align-items: center;
+    }
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      font-size: 1.05rem;
+    }
+    .contact-info i {
+      width: 28px;
+      color: #2a6fdb;
+    }
+    .contact-form {
+      flex: 1;
+      min-width: 240px;
+    }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid #d0deef;
+      border-radius: 30px;
+      margin-bottom: 12px;
+      font-size: 1rem;
+      background: #f8fafd;
+    }
+    .contact-form textarea {
+      border-radius: 20px;
+      resize: vertical;
+    }
+    .contact-form button {
+      background: #0b1a2b;
+      color: #fff;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .contact-form button:hover {
+      background: #1f3d60;
+    }
+
+    footer {
+      background: #0b1a2b;
+      color: #b6ccdd;
+      text-align: center;
+      padding: 24px 0;
+      font-size: 0.95rem;
+      margin-top: 20px;
+    }
+    footer i {
+      color: #5f8fd9;
+    }
+
+    @media (max-width: 700px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .hero { flex-direction: column; text-align: center; }
+      .hero-text p { margin: 0 auto; }
+      .nav-links { gap: 14px; margin-top: 10px; }
+      .contact-row { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo"><i class="fas fa-cogs"></i> Nsubuga Alex.</div>
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#certifications">Certifications</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- HOME -->
+    <section id="home">
+      <div class="hero">
+        <div class="hero-image">
+          <!-- professional photo placeholder - replace src with your image -->
+          <img src="img/alex12.png" alt="Professional photo" />
+        </div>
+        <div class="hero-text">
+          <h1>Alex M. </h1>
+          <div class="badge"><i class="fas fa-server"></i> IT Support & Systems Administrator</div>
+          <p class="intro-short"> <i class="fas fa-quote-left" style="color:#2a6fdb; opacity:0.5;"></i> Reliable, proactive IT professional with 3+ years in systems administration, data analysis, and technical support.</p>
+          <p style="margin-top: 12px;"><i class="fas fa-map-pin" style="color:#2a6fdb;"></i> Kampala, UG · <i class="fas fa-envelope"></i> alexabrasacs@gmail.com</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2><i class="fas fa-user-circle"></i> About Me</h2>
+      <div class="about-grid">
+        <div class="about-card">
+          <h3><i class="fas fa-graduation-cap"></i> Education & Role</h3>
+          <p><strong>Diploma in IT</strong> · Uganda Institute of ICT</p>
+          <p style="margin-top: 12px;"><i class="fas fa-briefcase"></i> <strong>Current:</strong> RF Data Analyst at Emerald Telcom</p>
+          <p style="margin-top: 8px;"><i class="fas fa-flag-checkered"></i> <strong>Career goal:</strong> Lead IT infrastructure architect, bridging data analysis with secure systems design.</p>
+        </div>
+        <div class="about-card">
+          <h3><i class="fas fa-address-card"></i> Short intro</h3>
+          <p>I'm an IT Support & Systems Administrator with a strong background in Windows, Linux, and networking. Currently working as an RF Data Analyst, I combine technical support with data-driven insights. Passionate about cybersecurity and building resilient systems.</p>
+          <p style="margin-top: 10px;"><i class="fas fa-heart" style="color:#c44545;"></i> I enjoy mentoring, scripting, and contributing to open-source communities.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2><i class="fas fa-tools"></i> Skills</h2>
+      <div class="skills-wrapper">
+        <span class="skill-item"><i class="fab fa-windows"></i> Windows Administration</span>
+        <span class="skill-item"><i class="fab fa-linux"></i> Linux Basics</span>
+        <span class="skill-item"><i class="fas fa-network-wired"></i> Networking</span>
+        <span class="skill-item"><i class="fas fa-database"></i> Database Management</span>
+        <span class="skill-item"><i class="fab fa-php"></i> PHP & MySQL</span>
+        <span class="skill-item"><i class="fas fa-headset"></i> Technical Support</span>
+        <span class="skill-item"><i class="fas fa-shield-alt"></i> Cybersecurity Fundamentals</span>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2><i class="fas fa-code-branch"></i> Projects</h2>
+      <div class="project-grid">
+        <div class="project-card"><h4><i class="fas fa-school"></i> School Management System</h4><p>Full-featured platform for student records, attendance, and grade management. Built with PHP/MySQL.</p></div>
+        <div class="project-card"><h4><i class="fas fa-user-graduate"></i> Parent Dashboard</h4><p>Real-time parent portal with student progress tracking, notifications, and fee status.</p></div>
+        <div class="project-card"><h4><i class="fas fa-user-check"></i> Student Portal</h4><p>Self-service portal for course enrollment, results, and profile updates.</p></div>
+        <div class="project-card"><h4><i class="fas fa-envelope"></i> Email Notification System</h4><p>Automated alert system for school events, report cards, and attendance using SMTP.</p></div>
+        <div class="project-card"><h4><i class="fas fa-database"></i> Database Projects</h4><p>Designed normalized schemas, stored procedures, and ETL pipelines for operational reporting.</p></div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications">
+      <h2><i class="fas fa-certificate"></i> Certifications</h2>
+      <div class="cert-list">
+        <div class="cert-item"><strong><i class="fas fa-shield-virus"></i> Cisco Introduction to Cybersecurity</strong> <span>Issued: 2025 · <!--Credential ID: CSCO-2024-845 --></span></div>
+        <!-- <div class="cert-item"><strong><i class="fas fa-cloud"></i> (Future) CompTIA Security+</strong> <span>In progress · expected 2026</span></div>
+        <div class="cert-item"><strong><i class="fas fa-server"></i> Microsoft Certified: Azure Fundamentals</strong> <span>Planned Q3 2026</span></div> -->
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <h2><i class="fas fa-briefcase"></i> Experience</h2>
+      <div class="exp-list">
+        <div class="exp-item"><span><strong>Emerald Telcom</strong> · <span class="exp-role">RF Data Analyst</span></span> <span>2023 – present · Kampala</span></div>
+        <div class="exp-item"><span><strong>Kabubbu Development Project</strong> · <span class="exp-role">IT Support Specialist</span></span> <span>2021 – 2023 · Kabubbu</span></div>
+        <div class="exp-item"><span><strong>Proswift Technologies</strong> · <span class="exp-role">Systems Administrator</span></span> <span>2019 – 2021 · Kampala</span></div>
+      </div>
+    </section>
+
+    <!-- DOWNLOAD CV + CONTACT -->
+    <section id="cv-contact" style="border-bottom: none; padding-bottom: 30px;">
+      <div class="cv-section">
+        <button class="btn-cv" id="downloadCvBtn"><i class="fas fa-file-pdf"></i> Download CV</button>
+      </div>
+    </section>
+
+    <section id="contact" style="padding-top: 10px;">
+      <h2><i class="fas fa-paper-plane"></i> Contact Me</h2>
+      <div class="contact-wrap">
+        <div class="contact-row">
+          <div class="contact-info">
+            <span><i class="fas fa-envelope"></i> alexabrasacs@gmail.com</span>
+            <span><i class="fas fa-phone-alt"></i> +256 774 096 837</span>
+            <span><i class="fab fa-linkedin"></i> linkedin.com/in/nsubugaalex</span>
+            <span><i class="fab fa-github"></i> github.com/abrasacs</span>
+          </div>
+          <div class="contact-form">
+            <input type="text" placeholder="Your name" />
+            <input type="email" placeholder="Your email" />
+            <textarea rows="3" placeholder="Message..."></textarea>
+            <button><i class="fas fa-paper-plane"></i> Send message</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p><i class="fas fa-laptop-code"></i> Alex M. · IT Support & Systems Admin · <i class="fas fa-copyright"></i> 2026</p>
+    </div>
+  </footer>
+
+  <!-- simple CV download simulation -->
+  <script>
+    document.getElementById('downloadCvBtn').addEventListener('click', function(e) {
+      // simulate download – in real scenario link to actual PDF.
+      // alert('📄 Your CV download would start here. (Replace with actual PDF file)');
+       window.location.href = 'cv.pdf';
+    });
+  </script>
+
+</body>
+</html>
